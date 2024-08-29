@@ -11,6 +11,7 @@ import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,81 +31,91 @@ public class Ch02Controller {
 	
 	
 	@RequestMapping("/getMethod")
-	public String getMethod() {
+	public String getMethod(Model model) {
 		log.info("실행");
+		model.addAttribute("chNum", "ch02");
 		return "ch02/getMethod";
 	}
 	
 	/*@RequestMapping(value="/getAtag", method=RequestMethod.GET) 어노테이션 일때 2개 이상의 값을 넣을때 이런식으로 넣어야 한다.*/
 	@GetMapping("/getAtag")
-	public String getAtag(String bno, String bkind) {
+	public String getAtag(String bno, String bkind, Model model) {
 		log.info("실행");
 		log.info("bno: " + bno);
 		log.info("bkind: " + bkind);
+		model.addAttribute("chNum", "ch02");
 		return "ch02/getMethod";
 	}
 	
 	@GetMapping("/getFormTag")
-	public String getFormTag(String bno, String bkind) {
+	public String getFormTag(String bno, String bkind, Model model) {
 		log.info("실행");
 		log.info("bno: " + bno);
 		log.info("bkind: " + bkind);
+		model.addAttribute("chNum", "ch02");
 		return "redirect:/";
 		
 	}
 	
 	@GetMapping("/getLocationHref")
-	public String getLocationHref(String bno, String bkind) {
+	public String getLocationHref(String bno, String bkind, Model model) {
 		log.info("실행");
 		log.info("bno: " + bno);
 		log.info("bkind: " + bkind);
+		model.addAttribute("chNum", "ch02");
 		return "ch02/getMethod";
 	}	
 
 	@GetMapping("/getAjax1")
-	public String getAjax1(String bno, String bkind) {
+	public String getAjax1(String bno, String bkind, Model model) {
 		log.info("실행");
 		log.info("bno: " + bno);
 		log.info("bkind: " + bkind);
+		model.addAttribute("chNum", "ch02");
 		return "ch02/ajaxFragmentHtml";
 	}
 	
 	@GetMapping("/getAjax2")
-	public String getAjax2(String bno, String bkind) {
+	public String getAjax2(String bno, String bkind, Model model) {
 		log.info("실행");
 		log.info("bno: " + bno);
 		log.info("bkind: " + bkind);
+		model.addAttribute("chNum", "ch02");
 		return "ch02/ajaxJSON";
 	}
 
 	@GetMapping("/postMethod")
-	public String postMethod() {
+	public String postMethod(Model model) {
 		log.info("실행");
+		model.addAttribute("chNum", "ch02");
 		return "ch02/postMethod";
 	}
 	
 	@PostMapping("/postFormTag")
-	public String postFormTag(String bno, String bkind) {
+	public String postFormTag(String bno, String bkind, Model model) {
 		log.info("실행");
 		log.info("실행");
 		log.info("bno: " + bno);
 		log.info("bkind: " + bkind);
+		model.addAttribute("chNum", "ch02");
 		return "ch02/postMethod";
 	}
 	
 	@PostMapping("/postAjax1")
-	public String postAjax1(String bno, String bkind) {
+	public String postAjax1(String bno, String bkind, Model model) {
 		log.info("실행");
 		log.info("bno: " + bno);
 		log.info("bkind: " + bkind);
+		model.addAttribute("chNum", "ch02");
 		return "ch02/ajaxFragmentHtml";
 	}
 	
 	@PostMapping("/postAjax2")
-	public String postAjax2(String bno, String bkind) {
+	public String postAjax2(String bno, String bkind, Model model) {
 		log.info("실행");
 		log.info("bno: " + bno);
 		log.info("bkind: " + bkind);
+		model.addAttribute("chNum", "ch02");
 		return "ch02/ajaxJSON";
 	}
 
@@ -117,6 +128,7 @@ public class Ch02Controller {
 		mav.addObject("mid", "user1");
 		mav.addObject("memail", "user1@mycompany.com");
 		mav.setViewName("ch02/returnModelAndView");
+		mav.addObject("chNum", "ch02");
 		return mav;
 	}
 
@@ -156,14 +168,16 @@ public class Ch02Controller {
 	
 	@LoginCheck // 이 어노테이션이 붙어있는 경로는 로그인 검사를 하고 안붙어 있는 곳은 로그인 검사 안하는 식으로 / Login 어노테이션으로 로그인 체크 결정
 	@GetMapping("/mypage")
-	public String mypage() {
+	public String mypage(Model model) {
 		log.info("실행");
+		model.addAttribute("chNum", "ch02");
 		return "ch02/mypage";
 	}
 	
 	@GetMapping("/loginForm")
-	public String loginForm() {
+	public String loginForm(Model model) {
 		log.info("실행");
+		model.addAttribute("chNum", "ch02");
 		return "ch02/loginForm";
 	}	
 	

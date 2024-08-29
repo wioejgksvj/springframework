@@ -25,7 +25,7 @@ public class Ch04Controller {
 	}
 	
 	@InitBinder("ch04LoginForm")
-	public void ch04LoginFomrmValidator(WebDataBinder binder) {
+	public void ch04LoginFormValidator(WebDataBinder binder) {
 		binder.setValidator(new Ch04LoginFormValidator());
 	}
 	
