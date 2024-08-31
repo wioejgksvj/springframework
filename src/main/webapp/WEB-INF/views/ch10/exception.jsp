@@ -5,15 +5,11 @@
 
 <div class="card">
 	<div class="card-header">
-		Home
+		Exception 처리
 	</div>
-		<div class="card-body">
-			<img
-				src="${pageContext.request.contextPath}/resources/image/photos/photo1.jpg"
-				height="100" /> 
-			<img src="resources/image/photos/photo2.jpg"
-				height="100" />
-		</div>
+	<div class="card-body">
+		알 수 없는 예외 발생이 되어 처리함.
+	</div>	
 </div>			
 <!-- include 액션의 역할: 외부의 JSP를 실행하고 그 결과를 삽입시켜줌 -->
 <jsp:include page="/WEB-INF/views/common/bottom.jsp"></jsp:include>	
